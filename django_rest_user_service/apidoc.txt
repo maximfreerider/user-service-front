@@ -1,0 +1,27 @@
+api/v1/user/ - GET all users
+api/v1/user/id/ - GET user
+
+api/v1/user/create/ - POST 
+
+{
+    "username": "",
+    "first_name": "",
+    "last_name": "",
+    "password": "",
+    "email": "",
+    "group": null
+} 
+
+api/v1/user/id/ PATCH
+
+{
+	"group": id_of_group
+}
+
+
+api/v1/group/ - GET all groups
+api/v1/create/ POST
+
+{
+    "name_of_group": ""
+}
