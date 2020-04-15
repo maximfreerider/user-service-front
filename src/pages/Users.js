@@ -87,7 +87,8 @@ export class UserPage extends React.Component {
 					{this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null}
 					<button className="open-modal-btn" onClick={this.openModalHandler}>Open Modal</button>
 					<Modal className="modal" show={this.state.isShowing} close={this.closeModalHandler}
-					></Modal>
+					>
+					</Modal>
 				</div>
 			 </div>
 		);
