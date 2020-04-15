@@ -1,26 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Route, Link} from 'react-router-dom';
+import {UserPage} from './pages/Users';
+import {GroupPage} from './pages/Groups';
+import {UserDetailPage} from './pages/UserDetailPage';
 
-function App() {
+const Base = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="center">
+      <h3>Django + React</h3>
+      <h4>Hello to Web Application</h4>
     </div>
   );
 }
+
+const Header = (props) => {
+  return (
+    <header>
+      <nav>
+        <div className="nav-wrapper">
+          <ul id="nav-mobile" className="left hide-on-med-and-down">
+            <li><Link to="/users">Users</Link></li>
+            <li><Link to="/groups">Groups</Link></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  );
+}
+
+const App = () => {
+  return (
+    <div className="container">
+      <Header/>
+      <Route render={() => <Base/>} path="/" exact />
+      <Route render={() => <UserPage/>} path="/users" exact/>
+      <Route render={() => <GroupPage/>} path="/groups"/>
+      <Route render={() => <UserDetailPage/>} path="/users/detail" />
+    </div>
+  )
+}
+
 
 export default App;
